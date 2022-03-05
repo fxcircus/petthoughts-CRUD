@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
     Thought.find({})
         .then((thoughts) => {
-            res.render("thoughts/Index")
+            res.render("thoughts/Index", { thoughts })
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -24,6 +24,15 @@ router.get('/new', (req, res) => {
 // UPDATE
 
 // CREATE
+router.post('/', (req, res) => {
+    Thought.create(req.body)
+        .then((createdThought) => {
+            res.redirect ('/thoughts')
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+})
 
 // EDIT
 
