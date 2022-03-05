@@ -37,5 +37,15 @@ router.post('/', (req, res) => {
 // EDIT
 
 // SHOW
+router.get('/:id', (req, res) => {
+    const { id } = req.params
+    Thought.findById(id)
+        .then((thought) => {
+            res.render('thoughts/Show', { thought })
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+})
 
 module.exports = router
