@@ -6,7 +6,7 @@ const thoughtSchema = new Schema ({
     name: String,
     location: String,
     thought: String,
-    image: String
+    img: String
 })
 
 const Thought = model("Thought", thoughtSchema)

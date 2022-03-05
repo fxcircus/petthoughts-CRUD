@@ -7,8 +7,7 @@ class Index extends React.Component {
         return(
             <DefaultLayout>
                 <div>
-                    testtext
-                    {/* {
+                    {
                         thoughts.map((thought) => {
                             return(
                                 <article>
@@ -20,7 +19,7 @@ class Index extends React.Component {
                                 </article>
                             )
                         })
-                    } */}
+                    }
                 </div>
             </DefaultLayout>   
         )
