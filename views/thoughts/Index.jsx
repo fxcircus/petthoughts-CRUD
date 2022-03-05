@@ -7,6 +7,7 @@ class Index extends React.Component {
         return(
             <DefaultLayout>
                 <div>
+                    <a href='/thoughts/new'>Add new thought</a>
                     {
                         thoughts.map((thought) => {
                             return(

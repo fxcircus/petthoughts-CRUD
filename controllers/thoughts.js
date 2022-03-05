@@ -32,6 +32,16 @@ router.delete('/:id', (req, res) => {
 })
 
 // UPDATE
+router.put('/:id', (req, res) => {
+    const { id } = req.params
+    Thought.findByIdAndUpdate(id, req.body, { new: true })
+        .then(() => {
+            res.redirect(`/thoughts/${id}`)
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+})
 
 // CREATE
 router.post('/', (req, res) => {
@@ -45,6 +55,16 @@ router.post('/', (req, res) => {
 })
 
 // EDIT
+router.get('/:id/edit', (req, res) => {
+    const { id } = req.params
+    Thought.findById(id)
+        .then((thought) => {
+            res.render('thoughts/Edit', { thought })
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+})
 
 // SHOW
 router.get('/:id', (req, res) => {

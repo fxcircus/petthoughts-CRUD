@@ -23,6 +23,7 @@ class New extends React.Component {
                     </fieldset>
                     <input type='submit' value='Add thought' />
                 </form>
+                <a href='/thoughts'><button>Back to main</button></a>
             </DefaultLayout>
         )
     }
