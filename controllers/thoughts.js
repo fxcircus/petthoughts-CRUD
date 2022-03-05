@@ -20,6 +20,16 @@ router.get('/new', (req, res) => {
 })
 
 // DELETE
+router.delete('/:id', (req, res) => {
+    const { id } = req.params
+    Thought.findByIdAndDelete(id)
+        .then(() => {
+            res.redirect('/thoughts')
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+})
 
 // UPDATE
 
