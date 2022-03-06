@@ -17,12 +17,15 @@ class Index extends React.Component {
                                     <a href={`/thoughts/${thought._id}`}>
                                         <img src={thought.img} alt={thought.name} />
                                     </a>
+                                    <div className='name-area'>
+                                        <div className='image-text'>{thought.name}</div>
+                                    </div>
                                 </article>
                             )
                         })
                     }
                 </div>
-            </DefaultLayout>   
+            </DefaultLayout>
         )
     }
 }

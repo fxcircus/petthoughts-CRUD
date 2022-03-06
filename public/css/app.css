@@ -27,9 +27,25 @@ img {
     transition: .1s ease;
 }
 
-img:hover {
+article:hover img{
     transform: scale(1.01);
     opacity: 0.8;
+}
+
+.name-area {
+    transition: .5s ease;
+    opacity: 0;
+    position: relative;
+    top:-50%;
+}
+
+.image-text {
+    color: white;
+    font-size: xx-large;
+}
+
+article:hover .name-area {
+    opacity: 1;
 }
 
 .circles {
