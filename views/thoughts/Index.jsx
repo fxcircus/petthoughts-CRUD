@@ -18,7 +18,7 @@ class Index extends React.Component {
                                         <img src={thought.img} alt={thought.name} />
                                     </a>
                                     <div className='name-area'>
-                                        <div className='image-text'>{thought.name}</div>
+                                        <a href={`/thoughts/${thought._id}`} className='image-text'>{thought.name}</a>
                                     </div>
                                 </article>
                             )
