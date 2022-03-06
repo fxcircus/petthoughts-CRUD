@@ -22,8 +22,9 @@ class Show extends React.Component {
                                 <input type='text' name='img' value={thought.img}/>
                             </label>
                     </fieldset>
-                    <input type='submit' value={`Edit ${ thought.name }`} />
+                    <input type='submit' value='Confirm' />
                 </form>
+                <a href={`/thoughts/${thought.id}`}><button>Cancel</button></a>
             </DefaultLayout>
         )
     }

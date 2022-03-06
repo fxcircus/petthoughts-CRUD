@@ -1,3 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
 body {
     background-color: azure;
+    font-family: 'Titan One', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+button {
+    font-family: 'Titan One', cursive;
+}
+
+input {
+    font-family: 'Titan One', cursive;
+}
+
+img {
+    /* border: solid black 5px; */
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    transition: .1s ease;
+}
+
+img:hover {
+    transform: scale(1.01);
+    opacity: 0.8;
+}
+
+.circles {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    grid-gap: 20px;
+    max-width: 1600px;
+    max-height: 900px;
+    min-height: 360px;
+    min-width: 640px;
+    padding: 5%;
+    margin: 5%;
+}
+
+#circle1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#circle2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#circle3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#circle4 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#circle5 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#circle6 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#circle7 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#circle8 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#circle9 {
+    grid-column: 3;
+    grid-row: 3;
+}
+

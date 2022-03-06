@@ -21,6 +21,7 @@ class DefaultLayout extends React.Component {
                         {this.props.children}
                     </main>
                     <footer>
+                        <hr />
                         © Roy Daniel
                     </footer>
                 </body>

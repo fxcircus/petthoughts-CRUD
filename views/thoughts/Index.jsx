@@ -1,21 +1,21 @@
 const React = require('react')
 const DefaultLayout = require('../layout/Default')
 
+let circleNum = 1;
+
 class Index extends React.Component {
     render() {
         const { thoughts } = this.props
         return(
             <DefaultLayout>
-                <div>
-                    <a href='/thoughts/new'>Add new thought</a>
+                <a href='/thoughts/new'>Add new thought</a>
+                <div class='circles'>
                     {
                         thoughts.map((thought) => {
                             return(
-                                <article>
+                                <article id={`circle${circleNum++}`}>
                                     <a href={`/thoughts/${thought._id}`}>
-                                        <h2>
-                                            {thought.name}: {thought.thought}
-                                        </h2>
+                                        <img src={thought.img} alt={thought.name} />
                                     </a>
                                 </article>
                             )
