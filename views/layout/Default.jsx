@@ -14,8 +14,11 @@ class DefaultLayout extends React.Component {
                 </head>
                 <body>
                     <header>
-                        <h1>Pet Thoughts</h1>
-                        <h3>From The Minds Of Pups</h3>
+                        <div class='page-title'>Pet Thoughts</div>
+                        <div class='page-sub-title'>
+                            <div>From</div><div>The</div><div>Minds</div><div>Of</div><div>Pups</div>
+                        </div>
+                        <hr />
                     </header>
                     <main>
                         {this.props.children}

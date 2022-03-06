@@ -1,21 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 
+:root {
+    --text-color: #FADD5C;
+    --hover-color: #FFA3AF;
+    --black-color:  #011936;
+}
+
+.page-title {
+    font-size: 90px;
+}
+
+.page-sub-title > div {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 20%;
+    text-align: center;
+}
+
 body {
-    background-color: azure;
+    background-color: #A3D5FF;
+    color:var(--text-color);
     font-family: 'Titan One', cursive;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-button {
-    font-family: 'Titan One', cursive;
-}
-
-input {
-    font-family: 'Titan One', cursive;
+    text-shadow: 2px 2px #ff0000;
 }
 
 img {
@@ -41,12 +54,35 @@ article:hover img{
 }
 
 .image-text {
-    color: white;
+    color: var(--text-color);
+    text-shadow: 2px 2px #ff0000;
     font-size: xx-large;
 }
 
 article:hover .name-area {
     opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+a:hover {
+    color: var(--hover-color)
+}
+
+button, input {
+    font-family: 'Titan One', cursive;
+    border: none;
+    border-radius: 5px;
+    color: var(--black-color);
+}
+
+button:hover, input:hover {
+    transform: scale(1.01);
 }
 
 .circles {
@@ -106,4 +142,3 @@ article:hover .name-area {
     grid-column: 3;
     grid-row: 3;
 }
-
