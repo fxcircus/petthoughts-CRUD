@@ -4,6 +4,7 @@
     --text-color: #f4dd78;
     --hover-color: #FFA3AF;
     --black-color:  #041d3c;
+    ---bubble-color: #efefef;
 }
 
 .page-title {
@@ -37,7 +38,6 @@ body {
 }
 
 img {
-    /* border: solid black 5px; */
     border-radius: 5px;
     height: 100%;
     width: 100%;
@@ -46,7 +46,7 @@ img {
     opacity: 1;
 }
 
-article:hover img{
+.index-item:hover img{
     transform: scale(1.01);
     opacity: 0.5;
 }
@@ -93,6 +93,77 @@ button:hover, input:hover {
 hr {
     border-top: 3px solid;
     border-radius: 5px;
+}
+
+.show-img {
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 10%;
+    transition: none;
+}
+
+.thought-bubble {
+    font-size: xx-large;
+    border: solid 5px;
+    border-radius: 50px;
+    text-shadow: none;
+    background-color: var(---bubble-color);
+    color: var(--black-color);
+    padding: 10%;
+}
+
+.bubble1 {
+    content: '';
+    width: 10px;
+    height: 10px;
+    color: var(--black-color);
+    background-color: var(---bubble-color);
+    z-index: 3;
+    border: solid 2px;
+    border-radius: 50%;
+    margin-left: 40%;
+    opacity: 0.8;
+}
+
+.bubble2 {
+    content: '';
+    width: 20px;
+    height: 20px;
+    color: var(--black-color);
+    background-color: var(---bubble-color);
+    z-index: 2;
+    border: solid 3px;
+    border-radius: 50%;
+    margin-left: 30%;
+    opacity: 0.9;
+}
+
+.bubble3 {
+    content: '';
+    width: 30px;
+    height: 30px;
+    color: var(--black-color);
+    background-color: var(---bubble-color);
+    z-index: 1;
+    border: solid 4px;
+    border-radius: 50%;
+    margin-left: 20%;
+    /* opacity: 0.9; */
+}
+
+.negative-space {
+    margin-bottom: -4%;
+}
+
+.stars {
+    margin-bottom: 10%;
+    color: var(--black-color);
+    font-size: xx-large;
+}
+
+.checked {
+    color: var(--text-color);
 }
 
 .circles {

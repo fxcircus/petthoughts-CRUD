@@ -13,7 +13,7 @@ class Index extends React.Component {
                     {
                         thoughts.map((thought) => {
                             return(
-                                <article id={`circle${circleNum++}`}>
+                                <article id={`circle${circleNum++}`} class='index-item'>
                                     <a href={`/thoughts/${thought._id}`}>
                                         <img src={thought.img} alt={thought.name} />
                                     </a>
