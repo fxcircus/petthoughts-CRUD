@@ -8,7 +8,7 @@ class Index extends React.Component {
         const { thoughts } = this.props
         return(
             <DefaultLayout>
-                <a href='/thoughts/new'>Add new thought</a>
+                <a href='/thoughts/new' class='no-shadow'>Add new thought</a>
                 <div class='circles'>
                     {
                         thoughts.map((thought) => {

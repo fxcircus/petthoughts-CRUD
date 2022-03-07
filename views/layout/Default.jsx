@@ -14,8 +14,8 @@ class DefaultLayout extends React.Component {
                 </head>
                 <body>
                     <header>
-                        <div class='page-title'>Pet Thoughts</div>
-                        <div class='page-sub-title'>
+                        <a href='/thoughts'><div class='page-title'>Pet Thoughts</div></a>
+                        <div class='page-sub-title no-shadow'>
                             <div>From</div><div>The</div><div>Minds</div><div>Of</div><div>Pups</div>
                         </div>
                         <hr />
@@ -23,7 +23,7 @@ class DefaultLayout extends React.Component {
                     <main>
                         {this.props.children}
                     </main>
-                    <footer>
+                    <footer class='no-shadow'>
                         <hr />
                         © Roy Daniel
                     </footer>
