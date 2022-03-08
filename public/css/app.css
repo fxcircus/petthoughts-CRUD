@@ -79,14 +79,17 @@ a:hover {
     color: var(--hover-color)
 }
 
-button, input {
+button, input, textarea {
     font-family: 'Titan One', cursive;
     border: none;
+    width: 40vw;
     border-radius: 5px;
     color: var(--black-color);
+    text-align: center;
+    margin: 2px;
 }
 
-button:hover, input:hover {
+button:hover, input:hover, textarea:hover {
     transform: scale(1.01);
 }
 
@@ -104,13 +107,13 @@ hr {
 }
 
 .thought-bubble {
-    font-size: xx-large;
+    font-size: x-large;
     border: solid 5px;
     border-radius: 50px;
     text-shadow: none;
     background-color: var(---bubble-color);
     color: var(--black-color);
-    padding: 10%;
+    padding: 10px;
 }
 
 .bubble1 {
@@ -153,7 +156,7 @@ hr {
 }
 
 .negative-space {
-    margin-bottom: -4%;
+    /* margin-bottom: -1%; */
 }
 
 .stars {
@@ -225,4 +228,14 @@ hr {
 #circle9 {
     grid-column: 3;
     grid-row: 3;
+}
+
+fieldset {
+    border:none;
+}
+
+.new-form {
+    display: flex;
+    flex-direction: column;
+    
 }

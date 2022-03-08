@@ -15,8 +15,7 @@ class Show extends React.Component {
                 <div>
                     <article class='show-page'>
                         <div class='thought-bubble negative-space'>{thought.thought}</div>
-                        {/* <div className="triangle"></div> */}
-                        <div className="bubble2 negative-space"></div>
+                        <div className="bubble3 negative-space"></div>
                         <div className="bubble2 negative-space"></div>
                         <div className="bubble1 negative-space"></div>
                         <img src={thought.img} alt={thought.name} class ='show-img'/>
