@@ -23,7 +23,7 @@ class Show extends React.Component {
                                     <input type='text' name='img' value={thought.img}/>
                                 </label>
                                 <label>
-                                    <input type='text' name='rank' placeholder={thought.rank}/>
+                                    <input type='number' name='rank' value={thought.rank} min='1' max='5'/>
                                 </label>
                             </div>                            
                     </fieldset>

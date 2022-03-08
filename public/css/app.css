@@ -102,7 +102,7 @@ hr {
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
-    margin-top: 10%;
+    margin-top: 5%;
     transition: none;
 }
 
@@ -110,8 +110,8 @@ hr {
     font-size: x-large;
     border: solid 5px;
     border-radius: 50px;
-    text-shadow: none;
     background-color: var(---bubble-color);
+    text-shadow: none;
     color: var(--black-color);
     padding: 10px;
 }
@@ -160,7 +160,7 @@ hr {
 }
 
 .stars {
-    margin-bottom: 10%;
+    margin-bottom: 10px;
     font-size: xx-large;
 }
 
