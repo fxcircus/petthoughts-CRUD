@@ -175,7 +175,7 @@ hr {
 .circles {
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 33% 33% 33%;
+    grid-auto-rows: 297px;
     grid-gap: 20px;
     max-width: 900px;
     max-height: 900px;
@@ -236,6 +236,14 @@ fieldset {
 
 .new-form {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;    
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    list-style-type:none;
 }

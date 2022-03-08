@@ -27,7 +27,7 @@ class Show extends React.Component {
                             <span class={isChecked(4,thought.rank)}></span>
                             <span class={isChecked(5,thought.rank)}></span>
                         </div>
-                        <a href={`/thoughts/${ thought._id }/edit`}><button>edit</button></a>
+                        <a href={`/thoughts/${ thought._id }/edit`}><button>Edit</button></a>
                         <form action={`/thoughts/${ thought.id }?_method=DELETE`} method='POST'>
                             <input type='submit' value="Delete" />
                         </form>

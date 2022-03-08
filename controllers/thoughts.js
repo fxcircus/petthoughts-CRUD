@@ -1,9 +1,37 @@
 const express = require('express')
 const Thought = require("../models/thought")
+const seed = require('../models/seed')
 
 const router = express.Router()
 
+
+// SEED
+router.get('/seed', (req, res) => {
+    Thought.insertMany(seed)
+        .then((seed) => {
+            console.log(seed)
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+        .finally(() => {
+            res.redirect('/thoughts')
+        })
+})
+
+// DELETE ALL ENTRIES
+router.get('/deleteall', (req, res) => {
+    Thought.deleteMany()
+        .then(() => {
+            res.redirect('/thoughts')
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+})
+
 // INDEX
+// for pageination: change the find method to only return first 9 results, might be possible using the timestamp field
 router.get('/', (req, res) => {
     Thought.find({})
         .then((thoughts) => {

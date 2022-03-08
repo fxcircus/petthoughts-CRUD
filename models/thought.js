@@ -8,7 +8,8 @@ const thoughtSchema = new Schema ({
     thought: String,
     img: String,
     rank: { type: Number, enum: [1,2,3,4,5], default: 5 }
-})
+},
+{ timestamps: true })
 
 const Thought = model("Thought", thoughtSchema)
 
