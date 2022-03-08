@@ -1,8 +1,6 @@
 const React = require('react')
 const DefaultLayout = require('../layout/Default')
 
-let circleNum = 1;
-
 class Index extends React.Component {
     render() {
         const { thoughts } = this.props
@@ -11,9 +9,9 @@ class Index extends React.Component {
                 <a href='/thoughts/new' class='no-shadow'>Add new thought</a>
                 <div class='circles'>
                     {
-                        thoughts.map((thought) => {
+                        thoughts.map((thought, i) => {
                             return(
-                                <article id={`circle${circleNum++}`} class='index-item'>
+                                <article id={`circle${i}`} class='index-item'>
                                     <a href={`/thoughts/${thought._id}`}>
                                         <img src={thought.img} alt={thought.name} />
                                     </a>

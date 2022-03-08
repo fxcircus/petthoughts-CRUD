@@ -20,6 +20,9 @@ class New extends React.Component {
                         <label>
                             <input type='text' name='img' placeholder='Image URL'/>
                         </label>
+                        <label>
+                            <input type='text' name='rank' placeholder='Rank from 1 to 5'/>
+                        </label>
                     </fieldset>
                     <input type='submit' value='Add thought' />
                 </form>

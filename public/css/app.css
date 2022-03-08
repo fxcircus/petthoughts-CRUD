@@ -158,8 +158,11 @@ hr {
 
 .stars {
     margin-bottom: 10%;
-    color: var(--black-color);
     font-size: xx-large;
+}
+
+.not-checked {
+    color: var(--black-color);
 }
 
 .checked {

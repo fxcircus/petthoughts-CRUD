@@ -21,6 +21,9 @@ class Show extends React.Component {
                             <label>
                                 <input type='text' name='img' value={thought.img}/>
                             </label>
+                            <label>
+                                <input type='text' name='rank' placeholder={thought.rank}/>
+                            </label>
                     </fieldset>
                     <input type='submit' value='Confirm' />
                 </form>
