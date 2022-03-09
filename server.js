@@ -7,6 +7,7 @@ const methodOverride = require("method-override")
 const Thought = require("./models/thought")
 const thoughtController = require('./controllers/thoughts')
 const path = require("path")
+const UserRouter = require("./controllers/user")
 
 /////////////////////////////////////////////////
 // Create our Express Application Object Bind Liquid Templating Engine
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true })); // parse urlencoded request bod
 app.use(methodOverride("_method")); // override for put and delete requests from forms
 app.use(express.static("public")); // serve files from public statically
 app.use('/thoughts', thoughtController)
+app.use("/user", UserRouter)
 
 app.get('/', (req, res) => {
     res.redirect('/thoughts')

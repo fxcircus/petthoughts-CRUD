@@ -57,7 +57,13 @@ class Index extends React.Component {
         let testCount  = this.props.docNum
         return(
             <DefaultLayout>
-                <a href='/thoughts/new' class='no-shadow'>Add new thought</a>
+
+                <div>
+                    <a href="/user/signup"><button>Signup</button></a>
+                    <a href="/user/login"><button>Login</button></a>
+                    <a href='/thoughts/new' class='no-shadow'>Add new thought</a>
+                </div>
+
                 <div class='circles'>
                     {
                         thoughts.map((thought, i) => {
@@ -74,11 +80,13 @@ class Index extends React.Component {
                         })
                     }
                 </div>
+                
                 <nav aria-label="...">
                     <ul class="pagination" id="page-numbers">
                         {pageLinks(testCount)}
                     </ul>
                 </nav>
+                
             </DefaultLayout>
         )
     }
