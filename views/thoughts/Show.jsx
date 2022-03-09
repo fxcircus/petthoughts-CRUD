@@ -20,6 +20,7 @@ class Show extends React.Component {
                         <div className="bubble1 negative-space"></div>
                         <img src={thought.img} alt={thought.name} class ='show-img'/>
                         <h3>{thought.name}, {thought.location}</h3>
+                        <div className="date">{thought.updatedAt.toLocaleDateString()}</div>
                         <div className="stars">
                             <span class={isChecked(1,thought.rank)}></span>
                             <span class={isChecked(2,thought.rank)}></span>
