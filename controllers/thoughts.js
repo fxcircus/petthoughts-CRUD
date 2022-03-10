@@ -44,9 +44,9 @@ router.get('/deleteall', (req, res) => {
 
 // PAGES
 router.get('/pages/:pagenum', async (req, res) => {
-    const docNum = await Thought.find({ username: req.session.username }).countDocuments()
+    const docNum = await Thought.find({ }).countDocuments()
     const skipRes = (req.params.pagenum - 1) * 9
-    Thought.find({ username: req.session.username }, {}, { skip: skipRes, limit: 9 })
+    Thought.find({  }, {}, { skip: skipRes, limit: 9 })
         .then((thoughts) => {
             console.log(docNum)
             res.render("thoughts/Index", { thoughts, docNum })
@@ -59,7 +59,7 @@ router.get('/pages/:pagenum', async (req, res) => {
 // INDEX
 // for pageination: change the find method to only return first 9 results, might be possible using the timestamp field
 router.get('/', (req, res) => {
-    Thought.find({ username: req.session.username })
+    Thought.find({  })
         .then((thoughts) => {
             res.render("thoughts/Index", { thoughts })
         })
