@@ -1,13 +1,5 @@
 const React = require('react')
 const DefaultLayout = require('../layout/Default')
-// const Thought = require("../../models/thought")
-
-
-
-// Thought.find({}).countDocuments()
-//     .then((count) => {
-//         testCount = count
-//     })
 
 // Pageination mk 1: using testCount var 
 const pageLinks = (docNum) => {
@@ -27,30 +19,6 @@ const pageLinks = (docNum) => {
     }
 }
 
-// Pageination mk 2: using moongoose countDocuments method
-// const pageLinks = () => {
-//     Thought.find({}).countDocuments()
-//         .then((count) => {
-//             let docNum = count
-//             console.log(`aaaasdasadadadad ${docNum}`)
-//             if (docNum  < 1) {
-//                 console.log(`Less than 10 results ==> ${docNum}`)
-//                 return
-//             } else {
-//                 const result = []
-//                 let pageNum = 1
-//                 console.log(`Entered function ===> ${docNum}`)
-//                 for (let i = 9; i <= docNum; i+=9) {
-//                     result.push(<a href={`/thoughts/pages${pageNum}`}>{ pageNum }</a>)
-//                     console.log(`pageNum = ${pageNum}`)
-//                     pageNum++
-//                 }
-//                 console.log(`Final result:\n${result}`)
-//                 return result
-//             }
-//         })
-// }
-
 class Index extends React.Component {
     render() {
         const thoughts = this.props.thoughts
@@ -61,6 +29,7 @@ class Index extends React.Component {
                 <div>
                     <a href="/user/signup"><button>Signup</button></a>
                     <a href="/user/login"><button>Login</button></a>
+                    <a href="/user/logout"><button>Logout</button></a>
                     <a href='/thoughts/new' class='no-shadow'>Add new thought</a>
                 </div>
 

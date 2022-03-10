@@ -234,7 +234,7 @@ fieldset {
     border:none;
 }
 
-.new-form {
+.new-form, .user-form {
     display: flex;
     flex-direction: column;    
 }

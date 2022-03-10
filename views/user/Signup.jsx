@@ -5,9 +5,9 @@ class Signup extends React.Component {
     render() {
         return (
             <DefaultLayout>
-                <div>
+                <div >
                     <form action="/user/signup" method="post">
-                        <fieldset>
+                        <fieldset class='user-form'>
                         <legend>New User</legend>
                         <label>USERNAME: <input type="text" name="username" required /> </label>
                         <label

@@ -5,22 +5,14 @@ const { send } = require('express/lib/response')
 
 const router = express.Router()
 
-// test - sort by dates
-// router.get('/test', (req, res) => {
-//     Thought.findOne({}, {}, { sort: { 'created_at' : -1 } })
-//         .then((post) => {
-//             console.log( post )
-//         })
-// })
-
-// test - only return 9 results
-router.get('/test', (req, res) => {
-    Thought.find({}).sort({date: -1}).limit(9)
-        .then((thoughts) => {
-            console.log( thoughts )
-            res.render("thoughts/Index", { thoughts })
-        })
-})
+// Authorization Middleware
+router.use((req, res, next) => {
+    if (req.session.loggedIn) {
+      next()
+    } else {
+      res.redirect("/user/login")
+    }
+  })
 
 // SEED
 router.get('/seed', (req, res) => {
@@ -52,9 +44,9 @@ router.get('/deleteall', (req, res) => {
 
 // PAGES
 router.get('/pages/:pagenum', async (req, res) => {
-    const docNum = await Thought.find({}).countDocuments()
+    const docNum = await Thought.find({ username: req.session.username }).countDocuments()
     const skipRes = (req.params.pagenum - 1) * 9
-    Thought.find({}, {}, { skip: skipRes, limit: 9 })
+    Thought.find({ username: req.session.username }, {}, { skip: skipRes, limit: 9 })
         .then((thoughts) => {
             console.log(docNum)
             res.render("thoughts/Index", { thoughts, docNum })
@@ -67,7 +59,7 @@ router.get('/pages/:pagenum', async (req, res) => {
 // INDEX
 // for pageination: change the find method to only return first 9 results, might be possible using the timestamp field
 router.get('/', (req, res) => {
-    Thought.find({})
+    Thought.find({ username: req.session.username })
         .then((thoughts) => {
             res.render("thoughts/Index", { thoughts })
         })
@@ -107,6 +99,10 @@ router.put('/:id', (req, res) => {
 
 // CREATE
 router.post('/', (req, res) => {
+    
+    // add username to req.body to track related user
+    req.body.username = req.session.username
+    
     Thought.create(req.body)
         .then((createdThought) => {
             res.redirect ('/thoughts')
