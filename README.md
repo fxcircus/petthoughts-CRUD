@@ -1,5 +1,5 @@
 # Pet Thoughts
-Full Stack Application
+Full Stack Application.
 Create a user and log your pets thoughts!
 ![MAIN](/public/assets/Main.png)
 
@@ -25,8 +25,13 @@ https://petthoughts.herokuapp.com/
 ### ERD
 ![ERD](/public/assets/ERD.png)
 
-### Wireframe
-
-
 ### Trello board
 https://trello.com/b/a25CwqLO/unit-2-project-pet-thoughts
+
+### Wireframe
+#### Main page
+![IndexView](/public/assets/WireframeIndexView.png)
+#### Show page
+![ShowView](/public/assets/WireframeShowView.png)
+#### New page
+![NewView](/public/assets/WireframeNewView.png)
