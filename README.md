@@ -30,7 +30,7 @@
 
 ## Getting Started
 ### Go to the live deployed app->
-[](https://petthoughts.herokuapp.com/){:target="_blank"}
+https://petthoughts.herokuapp.com/
 ##### Create a user and log your pets thoughts!
 
 ## Next Steps:
