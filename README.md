@@ -3,6 +3,10 @@ Full Stack Application.
 Create a user and log your pets thoughts!
 ![MAIN](/public/assets/Main.png)
 
+##### Pet Thoughts is a fully functional CRUD app
+#### C`reate`, R`ead`, U`pdate`, D`elete`
+##### That uses the 7 RESTful routes
+#### I`ndex` N`ew` D`elete` U`pdate` C`reate` E`dit` S`how`
 
 ## Live version
 https://petthoughts.herokuapp.com/
