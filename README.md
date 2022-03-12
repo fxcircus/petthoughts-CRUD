@@ -4,9 +4,9 @@
 ##### That uses the 7 RESTful routes->
 #### I`ndex` N`ew` D`elete` U`pdate` C`reate` E`dit` S`how`
 ##### Create a user and log your pets thoughts!
-![Main-Page-Screenshot](/public/assets/ScreenshotMain.png)
+![Main-Page-Screenshot](/public/assets/ScreenshoMain.png)
 ![Show-Page-Screenshot](/public/assets/ScreenshotShow.png)
-![New-Page-Screenshot](/public/assets/ScreenshotPage.png)
+![New-Page-Screenshot](/public/assets/ScreenshotNew.png)
 
 
 ## Live version
