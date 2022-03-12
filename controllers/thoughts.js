@@ -2,15 +2,17 @@ const express = require('express')
 const Thought = require("../models/thought")
 const seed = require('../models/seed')
 const { send } = require('express/lib/response')
+const session = require('express-session')
 
 const router = express.Router()
 
 // Authorization Middleware
 router.use((req, res, next) => {
     if (req.session.loggedIn) {
-      next()
+        next()
     } else {
-      res.redirect("/user/login")
+        next()
+    //   res.redirect("/user/login")
     }
   })
 
@@ -24,7 +26,7 @@ router.get('/seed', (req, res) => {
             res.status(400).json({ error })
         })
         .finally(() => {
-            res.redirect('/thoughts')
+            res.redirect('/thoughts/pages/1')
         })
 })
 
@@ -32,7 +34,7 @@ router.get('/seed', (req, res) => {
 router.get('/deleteall', (req, res) => {
     Thought.deleteMany()
         .then(() => {
-            res.redirect('/thoughts')
+            res.redirect('/thoughts/pages/1')
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -42,30 +44,33 @@ router.get('/deleteall', (req, res) => {
 
 // _id:{$gt: '621ec2abd87154b49235882f'}, {}, { skip: skipRes, limit: 9 }
 
-// PAGES
+// INDEX
 router.get('/pages/:pagenum', async (req, res) => {
     const docNum = await Thought.find({ }).countDocuments()
     const skipRes = (req.params.pagenum - 1) * 9
-    Thought.find({  }, {}, { skip: skipRes, limit: 9 })
+    Thought.find({ $or: [{ username: req.session.username }, {isPublic: true}] }, {}, { skip: skipRes, limit: 9 })
         .then((thoughts) => {
             console.log(docNum)
-            res.render("thoughts/Index", { thoughts, docNum })
+            res.render("thoughts/Index", { thoughts, docNum, session: req.session })
         })
         .catch((error) => {
             res.status(400).json({ error })
         })
 })
 
-// INDEX
+// Route to pages
 router.get('/', (req, res) => {
-    Thought.find({ $or: [{ username: req.session.username }, {isPublic: true}] })
-        .then((thoughts) => {
-            res.render("thoughts/Index", { thoughts, session: req.session })
-        })
-        .catch((error) => {
-            res.status(400).json({ error })
-        })
+    res.redirect('/thoughts/pages/1')
 })
+// router.get('/', (req, res) => {
+//     Thought.find({ $or: [{ username: req.session.username }, {isPublic: true}] })
+//         .then((thoughts) => {
+//             res.render("thoughts/Index", { thoughts, session: req.session })
+//         })
+//         .catch((error) => {
+//             res.status(400).json({ error })
+//         })
+// })
 
 // NEW
 router.get('/new', (req, res) => {
@@ -77,7 +82,7 @@ router.delete('/:id', (req, res) => {
     const { id } = req.params
     Thought.findByIdAndDelete(id)
         .then(() => {
-            res.redirect('/thoughts')
+            res.redirect('/thoughts/pages/1')
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -106,7 +111,7 @@ router.post('/', (req, res) => {
 
     Thought.create(req.body)
         .then((createdThought) => {
-            res.redirect ('/thoughts')
+            res.redirect ('/thoughts/pages/1')
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -128,13 +133,25 @@ router.get('/:id/edit', (req, res) => {
 // SHOW
 router.get('/:id', (req, res) => {
     const { id } = req.params
-    Thought.findById(id)
-        .then((thought) => {
-            res.render('thoughts/Show', { thought, session: req.session })
-        })
-        .catch((error) => {
-            res.status(400).json({ error })
-        })
+    
+    if (req.session.loggedIn) {
+        Thought.findById(id)
+            .then((thought) => {
+                res.render('thoughts/Show', { thought, session: req.session })
+            })
+            .catch((error) => {
+                res.status(400).json({ error })
+            })
+      } else {
+        res.redirect("/user/login")
+      }
+    // Thought.findById(id)
+    //     .then((thought) => {
+    //         res.render('thoughts/Show', { thought, session: req.session })
+    //     })
+    //     .catch((error) => {
+    //         res.status(400).json({ error })
+    //     })
 })
 
 module.exports = router
