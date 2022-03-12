@@ -3,9 +3,10 @@ const DefaultLayout = require('../layout/Default')
 
 class Show extends React.Component {
     render() {
-        const { thought } = this.props
+        const thoughts = this.props.thoughts
+        const session = this.props.session
         return(
-            <DefaultLayout>
+            <DefaultLayout show="yes" session={ session }>
                 <form action={`/thoughts/${thought.id}?_method=PUT`} method="post">
                     <fieldset>
                             <legend></legend>

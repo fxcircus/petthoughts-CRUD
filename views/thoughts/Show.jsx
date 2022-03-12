@@ -9,9 +9,10 @@ const isChecked = (starId, thought_rank) => {
 
 class Show extends React.Component {
     render() {
-        const { thought } = this.props
+        const thought = this.props.thought
+        const session = this.props.session
         return(
-            <DefaultLayout>
+            <DefaultLayout show="yes" session={ session }>
                 <div>
                     <article class='show-page'>
                         <div class='thought-bubble negative-space'>{thought.thought}</div>

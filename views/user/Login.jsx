@@ -4,7 +4,7 @@ const DefaultLayout = require('../layout/Default')
 class Login extends React.Component {
     render() {
         return (
-            <DefaultLayout>
+            <DefaultLayout show="no">
                 <div class='user-form'>
                     <form action="/user/login" method="post">
                     <fieldset>

@@ -22,14 +22,11 @@ const pageLinks = (docNum) => {
 class Index extends React.Component {
     render() {
         const thoughts = this.props.thoughts
+        const session = this.props.session
         let testCount  = this.props.docNum
         return(
-            <DefaultLayout>
-
+            <DefaultLayout show="yes" session={ session }>
                 <div>
-                    <a href="/user/signup"><button>Signup</button></a>
-                    <a href="/user/login"><button>Login</button></a>
-                    <a href="/user/logout"><button>Logout</button></a>
                     <a href='/thoughts/new' class='no-shadow'>Add new thought</a>
                 </div>
 
@@ -55,7 +52,6 @@ class Index extends React.Component {
                         {pageLinks(testCount)}
                     </ul>
                 </nav>
-                
             </DefaultLayout>
         )
     }

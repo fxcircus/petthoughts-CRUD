@@ -258,3 +258,19 @@ footer {
     position: absolute;
     bottom: 20px;
 }
+
+.user-area {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* position: relative;
+    right: 0; */
+    /* width: 50vw; */
+    /* width: var(--space-items); */
+    /* justify-content:space-between; */
+}
+
+.user-area button {
+    width: fit-content;
+    justify-content: space-between;
+}

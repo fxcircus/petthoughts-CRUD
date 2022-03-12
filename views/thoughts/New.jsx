@@ -3,8 +3,9 @@ const DefaultLayout = require('../layout/Default')
 
 class New extends React.Component {
     render() {
+        const session = this.props.session
         return (
-            <DefaultLayout>
+            <DefaultLayout show="yes" session={ session }>
                 <form action="/thoughts" method="post">
                     <fieldset>
                         <div className="new-form">

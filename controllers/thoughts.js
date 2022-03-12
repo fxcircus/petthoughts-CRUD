@@ -58,9 +58,9 @@ router.get('/pages/:pagenum', async (req, res) => {
 
 // INDEX
 router.get('/', (req, res) => {
-    Thought.find({  })
+    Thought.find({ username: req.session.username })
         .then((thoughts) => {
-            res.render("thoughts/Index", { thoughts })
+            res.render("thoughts/Index", { thoughts, session: req.session })
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -69,7 +69,7 @@ router.get('/', (req, res) => {
 
 // NEW
 router.get('/new', (req, res) => {
-    res.render('thoughts/New')
+    res.render('thoughts/New', { session: req.session })
 })
 
 // DELETE
@@ -116,7 +116,7 @@ router.get('/:id/edit', (req, res) => {
     const { id } = req.params
     Thought.findById(id)
         .then((thought) => {
-            res.render('thoughts/Edit', { thought })
+            res.render('thoughts/Edit', { thought, session: req.session })
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -128,7 +128,7 @@ router.get('/:id', (req, res) => {
     const { id } = req.params
     Thought.findById(id)
         .then((thought) => {
-            res.render('thoughts/Show', { thought })
+            res.render('thoughts/Show', { thought, session: req.session })
         })
         .catch((error) => {
             res.status(400).json({ error })
