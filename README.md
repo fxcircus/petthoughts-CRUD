@@ -4,7 +4,9 @@
 ##### That uses the 7 RESTful routes->
 #### I`ndex` N`ew` D`elete` U`pdate` C`reate` E`dit` S`how`
 ##### Create a user and log your pets thoughts!
-![MAIN](/public/assets/Main.png)
+![Main-Page-Screenshot](/public/assets/ScreenshotMain.png)
+![Show-Page-Screenshot](/public/assets/ScreenshotShow.png)
+![New-Page-Screenshot](/public/assets/ScreenshotPage.png)
 
 
 ## Live version
@@ -24,12 +26,13 @@ https://petthoughts.herokuapp.com/
 - Trello
 - GitHub
 - Git
+- Pen And Paper@
+
+## Trello board with user stories
+https://trello.com/b/a25CwqLO/unit-2-project-pet-thoughts
 
 ## ERD
 ![ERD](/public/assets/ERD.png)
-
-## Trello board
-https://trello.com/b/a25CwqLO/unit-2-project-pet-thoughts
 
 ## Wireframe
 #### Main page
