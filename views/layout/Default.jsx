@@ -24,11 +24,14 @@ class DefaultLayout extends React.Component {
                     <main>
                         {this.props.children}
                     </main>
-                    <footer class='no-shadow'>
-                        <hr />
-                        © Roy Daniel
-                    </footer>
                 </body>
+                {/* <hr /> */}
+                <footer>
+                    <div><a href="https://github.com/fxcircus/petthoughts-CRUD" target="_blank">
+                        GitHub Project</a>
+                    </div>
+                    <div>© Roy Daniel</div>
+                </footer>
             </html>
         )
     }

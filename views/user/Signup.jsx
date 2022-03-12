@@ -8,10 +8,10 @@ class Signup extends React.Component {
                 <div >
                     <form action="/user/signup" method="post">
                         <fieldset class='user-form'>
-                        <legend>New User</legend>
-                        <label>USERNAME: <input type="text" name="username" required /> </label>
+                        <legend></legend>
+                        <label>USERNAME:<br/><input type="text" name="username" required /></label><br/>
                         <label
-                            >PASSWORD: <input type="password" name="password" required />
+                            >PASSWORD:<br/><input type="password" name="password" required /><br/>
                         </label>
                         <input type="submit" value="Create Account" />
                         </fieldset>

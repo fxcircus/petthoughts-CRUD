@@ -8,12 +8,12 @@ class Login extends React.Component {
                 <div class='user-form'>
                     <form action="/user/login" method="post">
                     <fieldset>
-                        <legend>User Login</legend>
+                        <legend></legend>
                         <label>
-                            USERNAME: <input type="text" name="username" required />
+                            USERNAME:<br/><input type="text" name="username" required /><br/>
                         </label>
                         <label>
-                            PASSWORD: <input type="password" name="password" required />
+                            PASSWORD:<br/><input type="password" name="password" required /><br/>
                         </label>
                         <input type="submit" value="Login" />
                     </fieldset>

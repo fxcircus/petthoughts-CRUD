@@ -57,7 +57,6 @@ router.get('/pages/:pagenum', async (req, res) => {
 })
 
 // INDEX
-// for pageination: change the find method to only return first 9 results, might be possible using the timestamp field
 router.get('/', (req, res) => {
     Thought.find({  })
         .then((thoughts) => {
