@@ -3,7 +3,7 @@ const DefaultLayout = require('../layout/Default')
 
 class Show extends React.Component {
     render() {
-        const thoughts = this.props.thoughts
+        const thought = this.props.thought
         const session = this.props.session
         return(
             <DefaultLayout show="yes" session={ session }>

@@ -34,34 +34,31 @@ class DefaultLayout extends React.Component {
                             <div></div>
                         }
                     </header>
+
                     <main>
                         {this.props.children}
                     </main>
-                </body>
 
-                <footer>
-                    <div><a href="https://github.com/fxcircus/petthoughts-CRUD" target="_blank">
-                        GitHub Project</a>
-                    </div>
-                    {
-                        session?
-                        <div className="user-area">
-                            Logged in as: {session.username}
-                            <a href="/user/logout">
-                                <button>Logout</button>
-                            </a>
+                    <br /><hr />
+
+                    <footer>
+                        <div><a href="https://github.com/fxcircus/petthoughts-CRUD" target="_blank">
+                            GitHub Project</a>
                         </div>
-                        :
-                        <div className="user-area">
-                            <a href="/user/signup">
-                                <button>Signup </button>
-                            </a>
-                            OR 
-                            <a href="/user/login"><button>Login</button></a>                             
-                        </div>
-                    }
-                    <div>© Roy Daniel</div>
-                </footer>
+                        {
+                            session?
+                            <div className="user-area">
+                                Logged in as: {session.username} <a href="/user/logout"><button>Logout</button></a>
+                            </div>
+                            :
+                            <div className="user-area">
+                                <a href="/user/signup"><button>Signup </button></a> OR <a href="/user/login"><button>Login</button></a>                             
+                            </div>
+                        }
+                        <div>© Roy Daniel</div>
+                    </footer>
+
+                </body>
 
             </html>
         )

@@ -58,7 +58,7 @@ router.get('/pages/:pagenum', async (req, res) => {
 
 // INDEX
 router.get('/', (req, res) => {
-    Thought.find({ username: req.session.username })
+    Thought.find({ $or: [{ username: req.session.username }, {isPublic: true}] })
         .then((thoughts) => {
             res.render("thoughts/Index", { thoughts, session: req.session })
         })
@@ -102,6 +102,8 @@ router.post('/', (req, res) => {
     // add username to req.body to track related user
     req.body.username = req.session.username
     
+    req.body.isPublic === 'on' ? req.body.isPublic = true : req.body.isPublic = false
+
     Thought.create(req.body)
         .then((createdThought) => {
             res.redirect ('/thoughts')

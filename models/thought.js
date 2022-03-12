@@ -8,7 +8,8 @@ const thoughtSchema = new Schema ({
     thought: String,
     img: String,
     rank: { type: Number, enum: [1,2,3,4,5], default: 5 },
-    username: String
+    username: String,
+    isPublic: { type: Boolean, default: true}
 },
 { timestamps: true })
 

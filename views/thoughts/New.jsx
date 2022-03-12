@@ -25,6 +25,10 @@ class New extends React.Component {
                             <label>
                                 <input type='number' name='rank' placeholder='Rank from 1 to 5' min='1' max='5'/>
                             </label>
+                            <label>
+                                <p>Make Public?</p>
+                                <input type="checkbox" name='isPublic' defaultChecked></input>
+                            </label>
                         </div>
                     </fieldset>
                     <input type='submit' value='Add thought' />
