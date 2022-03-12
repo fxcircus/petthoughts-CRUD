@@ -1,7 +1,10 @@
 # Pet Thoughts
 Full Stack Application
+Create a user and log your pets thoughts!
+![MAIN](/public/assets/Main.png)
 
-### Live version
+
+## Live version
 https://petthoughts.herokuapp.com/
 
 ## Technologies Used
@@ -19,8 +22,11 @@ https://petthoughts.herokuapp.com/
 - GitHub
 - Git
 
-#### ERD
+### ERD
 ![ERD](/public/assets/ERD.png)
 
-#### Trello board
+### Wireframe
+
+
+### Trello board
 https://trello.com/b/a25CwqLO/unit-2-project-pet-thoughts
