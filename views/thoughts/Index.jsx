@@ -9,7 +9,8 @@ const pageLinks = (docNum) => {
     } else {
         const result = []
         let pageNum = 1
-        for (let i = 9; i <= docNum; i+=9) {
+        result.push(<a href={`/thoughts/pages/${pageNum}`}>{ pageNum++ }</a>)
+        for (let i = 10; i < docNum; i+=9) {
             result.push(<a href={`/thoughts/pages/${pageNum}`}>{ pageNum }</a>)
             console.log(i)
             pageNum++

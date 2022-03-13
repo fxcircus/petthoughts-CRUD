@@ -31,14 +31,14 @@
 ## Getting Started
 ### Go to the live deployed app->
 https://petthoughts.herokuapp.com/
-##### Create a user and log your pets thoughts!
+##### Create a user and log your pets' thoughts!
 
 ## Next Steps:
-- Set thoughts as public or private
 - Image hosting option instead of having to add URLs
 - Button that jumps to random thought
 - Share on social media button
 - Log app usage
+- Required fields validation
 
 ## Trello board with user stories
 https://trello.com/b/a25CwqLO/unit-2-project-pet-thoughts

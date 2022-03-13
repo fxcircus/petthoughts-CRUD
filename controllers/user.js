@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs")
 
 const router = express.Router()
 
+const mainRoute = '/thoughts/pages/1'
+
 // The Signup Routes (Get => form, post => submit form)
 router.get("/signup", (req, res) => {
   res.render("user/Signup.jsx")
@@ -48,7 +50,7 @@ router.post("/login", async (req, res) => {
           req.session.username = username
           req.session.loggedIn = true
           // redirect to fruits page if successful
-          res.redirect("/thoughts")
+          res.redirect(mainRoute)
         } else {
           // error if password doesn't match
           res.json({ error: "password doesn't match" })

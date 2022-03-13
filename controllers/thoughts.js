@@ -43,9 +43,6 @@ router.get('/deleteall', (req, res) => {
         })
 })
 
-
-// _id:{$gt: '621ec2abd87154b49235882f'}, {}, { skip: skipRes, limit: 9 }
-
 // INDEX
 router.get('/pages/:pagenum', async (req, res) => {
     const docNum = await Thought.find({ }).countDocuments()
@@ -64,15 +61,6 @@ router.get('/pages/:pagenum', async (req, res) => {
 router.get('/', (req, res) => {
     res.redirect(mainRoute)
 })
-// router.get('/', (req, res) => {
-//     Thought.find({ $or: [{ username: req.session.username }, {isPublic: true}] })
-//         .then((thoughts) => {
-//             res.render("thoughts/Index", { thoughts, session: req.session })
-//         })
-//         .catch((error) => {
-//             res.status(400).json({ error })
-//         })
-// })
 
 // NEW
 router.get('/new', (req, res) => {
@@ -147,13 +135,6 @@ router.get('/:id', (req, res) => {
       } else {
         res.redirect("/user/login")
       }
-    // Thought.findById(id)
-    //     .then((thought) => {
-    //         res.render('thoughts/Show', { thought, session: req.session })
-    //     })
-    //     .catch((error) => {
-    //         res.status(400).json({ error })
-    //     })
 })
 
 module.exports = router

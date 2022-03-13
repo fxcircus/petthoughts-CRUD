@@ -30,10 +30,11 @@ class New extends React.Component {
                                 <input type="checkbox" name='isPublic' defaultChecked></input>
                             </label>
                         </div>
+                        <input type='submit' value='Add thought' />
                     </fieldset>
-                    <input type='submit' value='Add thought' />
+                    <a href='/thoughts'><button>Back to main</button></a>
                 </form>
-                <a href='/thoughts'><button>Back to main</button></a>
+                
             </DefaultLayout>
         )
     }
