@@ -43,7 +43,7 @@ class DefaultLayout extends React.Component {
 
                     <footer>
                         <div><a href="https://github.com/fxcircus/petthoughts-CRUD" target="_blank">
-                            GitHub Project</a>
+                            GitHub</a>
                         </div>
                         {
                             session?

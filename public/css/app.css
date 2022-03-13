@@ -272,3 +272,8 @@ footer {
     width: fit-content;
     justify-content: space-between;
 }
+
+.current-page {
+    color: var(--hover-color);
+    transform: scale(1.3);
+}

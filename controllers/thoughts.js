@@ -47,10 +47,11 @@ router.get('/deleteall', (req, res) => {
 router.get('/pages/:pagenum', async (req, res) => {
     const docNum = await Thought.find({ }).countDocuments()
     const skipRes = (req.params.pagenum - 1) * 9
+    const currPage = req.params.pagenum
     Thought.find({ $or: [{ username: req.session.username }, {isPublic: true}] }, {}, { skip: skipRes, limit: 9 })
         .then((thoughts) => {
             console.log(docNum)
-            res.render("thoughts/Index", { thoughts, docNum, session: req.session })
+            res.render("thoughts/Index", { thoughts, docNum, session: req.session, currPage })
         })
         .catch((error) => {
             res.status(400).json({ error })

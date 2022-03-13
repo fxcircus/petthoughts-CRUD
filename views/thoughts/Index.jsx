@@ -1,21 +1,36 @@
 const React = require('react')
 const DefaultLayout = require('../layout/Default')
 
-// Pageination mk 1: using testCount var 
-const pageLinks = (docNum) => {
+const colorCurrPageNum = (currNum, pageNum) => {
+    const htmlClass = ''
+    currNum === pageNum ? htmlClass= 'current-page' : htmlClass = 'not-current-page'
+    return htmlClass
+}
+
+// Pageination using testCount var 
+const pageLinks = (docNum, currPage) => {
+    
     if (docNum  < 9) {
-        console.log(`Less than 9 results ==> ${docNum}`)
+        console.log(`Less than 9 results ==> ${docNum} ==> no pages`)
         return
     } else {
+        console.log(`More than 9 results ==> ${docNum} ==> rendering pages`)
+
         const result = []
         let pageNum = 1
-        result.push(<a href={`/thoughts/pages/${pageNum}`}>{ pageNum++ }</a>)
+        if(pageNum == currPage) {
+            result.push(<a href={ `/thoughts/pages/${pageNum}` } class='current-page'>{ pageNum++ }</a>)
+        } else { 
+            result.push(<a href={ `/thoughts/pages/${pageNum}` } class='not-current-page'>{ pageNum++ }</a>) 
+        }
+
+        let htmlClass = ''
         for (let i = 10; i < docNum; i+=9) {
-            result.push(<a href={`/thoughts/pages/${pageNum}`}>{ pageNum }</a>)
-            console.log(i)
+            currPage == pageNum ? htmlClass= 'current-page' : htmlClass = 'not-current-page' // color current page
+            result.push(<a href={`/thoughts/pages/${pageNum}`} class={ htmlClass }>{ pageNum }</a>)
             pageNum++
         }
-        console.log(`Entered function ===> ${docNum}`)
+
         return result
     }
 }
@@ -24,7 +39,8 @@ class Index extends React.Component {
     render() {
         const thoughts = this.props.thoughts
         const session = this.props.session
-        let testCount  = this.props.docNum
+        let docNum  = this.props.docNum
+        const currPage = this.props.currPage
         return(
             <DefaultLayout show="yes" session={ session }>
                 <div>
@@ -50,7 +66,7 @@ class Index extends React.Component {
                 
                 <nav aria-label="...">
                     <ul class="pagination" id="page-numbers">
-                        {pageLinks(testCount)}
+                        {pageLinks(docNum, currPage)}
                     </ul>
                 </nav>
             </DefaultLayout>
