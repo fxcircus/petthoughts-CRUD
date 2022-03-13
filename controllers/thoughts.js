@@ -6,6 +6,8 @@ const session = require('express-session')
 
 const router = express.Router()
 
+const mainRoute = '/thoughts/pages/1'
+
 // Authorization Middleware
 router.use((req, res, next) => {
     if (req.session.loggedIn) {
@@ -26,7 +28,7 @@ router.get('/seed', (req, res) => {
             res.status(400).json({ error })
         })
         .finally(() => {
-            res.redirect('/thoughts/pages/1')
+            res.redirect(mainRoute)
         })
 })
 
@@ -34,7 +36,7 @@ router.get('/seed', (req, res) => {
 router.get('/deleteall', (req, res) => {
     Thought.deleteMany()
         .then(() => {
-            res.redirect('/thoughts/pages/1')
+            res.redirect(mainRoute)
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -60,7 +62,7 @@ router.get('/pages/:pagenum', async (req, res) => {
 
 // Route to pages
 router.get('/', (req, res) => {
-    res.redirect('/thoughts/pages/1')
+    res.redirect(mainRoute)
 })
 // router.get('/', (req, res) => {
 //     Thought.find({ $or: [{ username: req.session.username }, {isPublic: true}] })
@@ -82,7 +84,7 @@ router.delete('/:id', (req, res) => {
     const { id } = req.params
     Thought.findByIdAndDelete(id)
         .then(() => {
-            res.redirect('/thoughts/pages/1')
+            res.redirect(mainRoute)
         })
         .catch((error) => {
             res.status(400).json({ error })
@@ -111,7 +113,7 @@ router.post('/', (req, res) => {
 
     Thought.create(req.body)
         .then((createdThought) => {
-            res.redirect ('/thoughts/pages/1')
+            res.redirect (mainRoute)
         })
         .catch((error) => {
             res.status(400).json({ error })

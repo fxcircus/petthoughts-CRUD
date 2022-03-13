@@ -239,7 +239,11 @@ fieldset {
 .new-form, .user-form {
     display: flex;
     flex-direction: column;
-    text-align: center; 
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    height: 80vh;
+    font-size: xx-large;
 }
 
 .pagination {
